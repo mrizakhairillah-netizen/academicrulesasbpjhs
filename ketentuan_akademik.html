@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ketentuan Akademik — SMP Al Azhar Syifa Budi Parahyangan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#132520;
+    --emerald:#0F3D2E;
+    --emerald-deep:#0A2A20;
+    --gold:#C79A3E;
+    --gold-soft:#E7D6A8;
+    --cream:#FAF6EC;
+    --paper:#FFFFFF;
+    --sage:#E4EDE5;
+    --sage-line:#CBDACB;
+    --muted:#5B6E63;
+    --brick:#9C4221;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    color:var(--emerald-deep);
+    margin:0;
+  }
+  ::selection{background:var(--gold-soft);}
+
+  /* ---------- Layout shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    min-height:100vh;
+  }
+  @media (max-width: 900px){
+    .shell{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar{
+    background:var(--emerald-deep);
+    color:#EFE9D8;
+    position:sticky;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+    padding:28px 22px 30px;
+    border-right:1px solid rgba(255,255,255,.06);
+  }
+  @media (max-width: 900px){
+    .sidebar{
+      position:relative;
+      height:auto;
+      max-height:none;
+    }
+  }
+  .brand{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding-bottom:20px;
+    margin-bottom:18px;
+    border-bottom:1px solid rgba(231,214,168,.22);
+  }
+  .brand-mark{
+    flex:0 0 auto;
+    width:42px;height:42px;
+    border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:16px;
+    color:var(--gold-soft);
+    letter-spacing:.5px;
+  }
+  .brand-text .school{
+    font-family:'Fraunces', serif;
+    font-size:14.5px;
+    line-height:1.35;
+    color:#fff;
+    font-weight:600;
+  }
+  .brand-text .tag{
+    font-size:11.5px;
+    color:var(--gold-soft);
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    margin-top:4px;
+  }
+  .nav-title{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:rgba(239,233,216,.55);
+    margin:4px 4px 10px;
+  }
+  nav ul{
+    list-style:none;
+    margin:0 0 22px;
+    padding:0;
+    border-left:1px solid rgba(231,214,168,.18);
+  }
+  nav li a{
+    display:flex;
+    gap:10px;
+    align-items:baseline;
+    text-decoration:none;
+    color:rgba(239,233,216,.78);
+    font-size:13.3px;
+    padding:7px 4px 7px 16px;
+    margin-left:-1px;
+    border-left:2px solid transparent;
+    transition:.15s color, .15s border-color, .15s background;
+  }
+  nav li a:hover{color:#fff;}
+  nav li a .n{
+    font-family:'Fraunces', serif;
+    font-variant-numeric:tabular-nums;
+    color:var(--gold-soft);
+    font-size:12px;
+    flex:0 0 auto;
+  }
+  nav li a.active{
+    color:#fff;
+    border-left-color:var(--gold);
+    background:rgba(231,214,168,.08);
+    font-weight:600;
+  }
+  .sidebar-foot{
+    font-size:11.5px;
+    color:rgba(239,233,216,.45);
+    padding-top:14px;
+    border-top:1px solid rgba(231,214,168,.15);
+  }
+
+  /* ---------- Main content ---------- */
+  main{padding:0;}
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(1100px 420px at 85% -10%, rgba(199,154,62,.20), transparent 60%),
+      linear-gradient(160deg, var(--emerald) 0%, var(--emerald-deep) 78%);
+    color:#F4EFE1;
+    padding:64px 56px 56px;
+    overflow:hidden;
+  }
+  @media (max-width:640px){ .hero{padding:44px 24px 36px;} }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 2px, transparent 2px 26px);
+    pointer-events:none;
+  }
+  .hero .eyebrow{
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    font-weight:600;
+    display:flex;align-items:center;gap:10px;
+  }
+  .hero .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);display:inline-block;}
+  .hero h1{
+    font-size:clamp(34px, 5vw, 54px);
+    font-weight:600;
+    color:#fff;
+    margin:16px 0 10px;
+    max-width:14ch;
+    line-height:1.06;
+  }
+  .hero p.lede{
+    max-width:56ch;
+    font-size:16.5px;
+    color:#E3DCC6;
+    margin:0 0 26px;
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .hero-meta .chip{
+    display:flex;flex-direction:column;gap:2px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(231,214,168,.25);
+    border-radius:10px;
+    padding:10px 16px;
+  }
+  .hero-meta .chip .label{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:rgba(239,233,216,.6);}
+  .hero-meta .chip .value{font-family:'Fraunces',serif;font-size:16px;color:#fff;}
+
+  .content{
+    max-width:840px;
+    margin:0 auto;
+    padding:52px 40px 100px;
+  }
+  @media (max-width:640px){ .content{padding:36px 20px 70px;} }
+
+  .intro-note{
+    background:var(--paper);
+    border:1px solid var(--sage-line);
+    border-left:4px solid var(--gold);
+    border-radius:10px;
+    padding:20px 22px;
+    font-size:15px;
+    color:#3B4A42;
+    margin-bottom:52px;
+  }
+  .intro-note strong{color:var(--emerald-deep);}
+
+  section.chapter{
+    padding-top:36px;
+    margin-top:14px;
+    scroll-margin-top:24px;
+  }
+  .chapter-head{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:22px;
+  }
+  .chapter-badge{
+    flex:0 0 auto;
+    width:52px;height:52px;
+    border-radius:50%;
+    background:var(--emerald-deep);
+    border:2px solid var(--gold);
+    color:var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-size:19px;font-weight:600;
+  }
+  .chapter-head h2{
+    font-size:24px;
+    font-weight:600;
+  }
+  .chapter-head .subhead{
+    display:block;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--muted);
+    margin-bottom:4px;
+  }
+
+  .card{
+    background:var(--paper);
+    border:1px solid var(--sage-line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin-bottom:16px;
+  }
+  .card h3{
+    font-size:16px;
+    color:var(--emerald);
+    font-weight:600;
+    margin-bottom:10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .card h3 .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:0 0 auto;}
+
+  ol.rules, ul.rules{
+    margin:0;
+    padding-left:1.3em;
+  }
+  ol.rules li, ul.rules li{
+    margin-bottom:8px;
+    padding-left:2px;
+  }
+  ol.rules{list-style:none;counter-reset:item;padding-left:0;}
+  ol.rules > li{
+    counter-increment:item;
+    position:relative;
+    padding-left:30px;
+    margin-bottom:10px;
+  }
+  ol.rules > li::before{
+    content:counter(item, lower-alpha) ".";
+    position:absolute;left:0;top:0;
+    color:var(--gold);
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:14px;
+  }
+  ol.rules ol{
+    list-style:none;
+    counter-reset:sub;
+    margin:8px 0 4px;
+    padding-left:6px;
+  }
+  ol.rules ol > li{
+    counter-increment:sub;
+    padding-left:26px;
+  }
+  ol.rules ol > li::before{
+    content:counter(sub) ")";
+    color:var(--muted);
+    font-size:12.5px;
+  }
+  .rules p{margin:0 0 8px;}
+
+  .callout{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    background:var(--sage);
+    border-radius:10px;
+    padding:14px 16px;
+    margin:14px 0;
+    font-size:14.5px;
+  }
+  .callout .num{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--emerald);
+    flex:0 0 auto;
+  }
+  .callout.brick{background:#F5E7DF;}
+  .callout.brick .num{color:var(--brick);}
+
+  table.assess{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    margin:6px 0 10px;
+  }
+  table.assess th, table.assess td{
+    border:1px solid var(--sage-line);
+    padding:10px 12px;
+    text-align:left;
+  }
+  table.assess th{
+    background:var(--sage);
+    color:var(--emerald-deep);
+    font-weight:700;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+  }
+  table.assess td:last-child{font-weight:600;color:var(--emerald);}
+
+  .stat-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:12px;
+    margin:20px 0 30px;
+  }
+  .stat{
+    background:var(--emerald-deep);
+    color:#EFE9D8;
+    border-radius:12px;
+    padding:16px 18px;
+  }
+  .stat .big{
+    font-family:'Fraunces',serif;
+    font-size:28px;
+    color:#fff;
+  }
+  .stat .small{font-size:12px;color:var(--gold-soft);margin-top:2px;}
+
+  /* Summary section */
+  .summary-section{
+    background:var(--emerald-deep);
+    padding:60px 40px 80px;
+    margin-top:20px;
+  }
+  .summary-inner{max-width:900px;margin:0 auto;}
+  .summary-inner .chapter-head h2{color:#fff;}
+  .summary-inner .subhead{color:var(--gold-soft);}
+  .checklist{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:14px;
+    margin-top:24px;
+  }
+  .check-item{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(231,214,168,.22);
+    border-radius:12px;
+    padding:16px 18px;
+    display:flex;
+    gap:12px;
+    color:#EFE9D8;
+    font-size:14px;
+  }
+  .check-item .cn{
+    font-family:'Fraunces',serif;
+    color:var(--gold);
+    font-weight:700;
+    font-size:17px;
+    flex:0 0 auto;
+  }
+
+  footer{
+    text-align:center;
+    padding:34px 20px 50px;
+    color:var(--muted);
+    font-size:12.5px;
+  }
+
+  /* print */
+  @media print{
+    .sidebar, .no-print{display:none;}
+    .shell{display:block;}
+    .hero, .summary-section{background:var(--emerald-deep) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  }
+
+  /* mobile nav toggle */
+  #navToggle{display:none;}
+  @media (max-width:900px){
+    .sidebar{padding-top:18px;}
+    #navToggle{
+      display:block;
+      width:100%;
+      background:transparent;
+      border:1px solid rgba(231,214,168,.3);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:8px;
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:13px;
+      margin-bottom:14px;
+      cursor:pointer;
+    }
+    nav#tocNav{display:none;}
+    nav#tocNav.open{display:block;}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">ASB</div>
+      <div class="brand-text">
+        <div class="school">SMP Al Azhar Syifa Budi Parahyangan</div>
+        <div class="tag">Bidang Kurikulum</div>
+      </div>
+    </div>
+
+    <button id="navToggle" onclick="document.getElementById('tocNav').classList.toggle('open')">☰ Daftar Bab</button>
+
+    <div class="nav-title">Daftar Ketentuan</div>
+    <nav id="tocNav">
+      <ul>
+        <li><a href="#pendahuluan"><span class="n">—</span> Pendahuluan</a></li>
+        <li><a href="#bab-1"><span class="n">01</span> Kegiatan Belajar Mengajar</a></li>
+        <li><a href="#bab-2"><span class="n">02</span> Kehadiran &amp; Ketepatan Waktu</a></li>
+        <li><a href="#bab-3"><span class="n">03</span> Ketidakhadiran</a></li>
+        <li><a href="#bab-4"><span class="n">04</span> Tugas &amp; Beban Belajar</a></li>
+        <li><a href="#bab-5"><span class="n">05</span> Asesmen / Penilaian</a></li>
+        <li><a href="#bab-6"><span class="n">06</span> Kejujuran Akademik</a></li>
+        <li><a href="#bab-7"><span class="n">07</span> Ketuntasan Belajar</a></li>
+        <li><a href="#bab-8"><span class="n">08</span> Remedial</a></li>
+        <li><a href="#bab-9"><span class="n">09</span> Pengayaan</a></li>
+        <li><a href="#bab-10"><span class="n">10</span> Pelaporan Hasil Belajar</a></li>
+        <li><a href="#bab-11"><span class="n">11</span> Kenaikan Kelas</a></li>
+        <li><a href="#bab-12"><span class="n">12</span> Kelulusan</a></li>
+        <li><a href="#bab-13"><span class="n">13</span> Layanan Kondisi Khusus</a></li>
+        <li><a href="#bab-14"><span class="n">14</span> Penyelesaian Masalah</a></li>
+        <li><a href="#ringkasan"><span class="n">★</span> Ringkasan Penting</a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-foot">Tahun Ajaran 2026 / 2027 · Kelas VII</div>
+  </aside>
+
+  <main>
+    <div class="hero" id="pendahuluan">
+      <div class="eyebrow">Sosialisasi Peserta Didik Baru</div>
+      <h1>Ketentuan Akademik</h1>
+      <p class="lede">Pedoman resmi bagi peserta didik kelas VII, VIII, dan IX dalam mengikuti seluruh proses pembelajaran di SMP Al Azhar Syifa Budi Parahyangan — dibuat agar kegiatan belajar berlangsung tertib, adil, terarah, dan tetap memperhatikan kondisi serta kebutuhan belajar peserta didik.</p>
+      <div class="hero-meta">
+        <div class="chip"><span class="label">Disampaikan untuk</span><span class="value">Kelas VII</span></div>
+        <div class="chip"><span class="label">Tahun Ajaran</span><span class="value">2026 / 2027</span></div>
+        <div class="chip"><span class="label">Disusun oleh</span><span class="value">WKS Kurikulum</span></div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="intro-note">
+        <strong>Kepada Ananda peserta didik kelas VII,</strong> selamat bergabung menjadi bagian dari keluarga besar SMP Al Azhar Syifa Budi Parahyangan. Ketentuan ini bukan sekadar aturan, melainkan pedoman bersama agar proses belajar berjalan tertib, adil, dan nyaman bagi semua. Simak baik-baik setiap bagiannya, ya!
+      </div>
+
+      <!-- BAB 1 -->
+      <section class="chapter" id="bab-1">
+        <div class="chapter-head">
+          <div class="chapter-badge">1</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Kegiatan Belajar Mengajar</h2></div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat"><div class="big">Senin–Jumat</div><div class="small">5 hari sekolah dalam sepekan</div></div>
+          <div class="stat"><div class="big">07.00–16.00</div><div class="small">jam kegiatan sekolah</div></div>
+          <div class="stat"><div class="big">10 menit</div><div class="small">hadir sebelum kegiatan dimulai</div></div>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Bentuk kegiatan belajar</h3>
+          <p>Kegiatan belajar mengajar meliputi: pembelajaran intrakurikuler, kokurikuler, pembiasaan, keagamaan, layanan bimbingan &amp; konseling, kegiatan wali kelas, literasi &amp; numerasi, proyek/praktik/presentasi, serta kegiatan lain yang ditetapkan sekolah. Semua kegiatan ini — termasuk ibadah dan kegiatan wali kelas — wajib diikuti sebagai bagian dari proses pendidikan.</p>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Selama di kelas</h3>
+          <ol class="rules">
+            <li>Mengikuti pembelajaran sesuai jadwal dan tidak meninggalkan kelas tanpa izin guru.</li>
+            <li>Jika guru belum hadir, ketua kelas menghubungi guru piket, sementara peserta didik tetap tertib di kelas.</li>
+            <li>Menyiapkan buku, alat tulis, dan perlengkapan sesuai mata pelajaran hari itu.</li>
+            <li>Telepon genggam, laptop, tablet, atau perangkat digital hanya digunakan atas izin dan arahan guru.</li>
+            <li>Kendala belajar disampaikan kepada guru mata pelajaran, wali kelas, atau guru BK.</li>
+            <li>Perubahan jadwal disampaikan melalui media komunikasi resmi sekolah.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- BAB 2 -->
+      <section class="chapter" id="bab-2">
+        <div class="chapter-head">
+          <div class="chapter-badge">2</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Kehadiran &amp; Ketepatan Waktu</h2></div>
+        </div>
+
+        <div class="callout"><div class="num">80%</div><div>Peserta didik wajib memiliki tingkat kehadiran <strong>minimal 80%</strong> dari seluruh kegiatan pembelajaran efektif setiap semester. Kehadiran dihitung dari: <em>jumlah kehadiran ÷ jumlah kegiatan efektif × 100%.</em> Peserta didik yang mewakili sekolah dalam lomba/tugas resmi tetap dinyatakan hadir (dengan surat tugas).</div></div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Pemantauan kehadiran bertahap</h3>
+          <ol class="rules">
+            <li>Kehadiran di bawah 90% → peserta didik mendapat pengingat dari wali kelas.</li>
+            <li>Kehadiran di bawah 85% → orang tua/wali diberi tahu, peserta didik menyusun rencana perbaikan.</li>
+            <li>Kehadiran di bawah 80% → pertemuan bersama peserta didik, orang tua/wali, wali kelas, guru BK, dan bidang kurikulum.</li>
+            <li>Kehadiran di bawah 80% menjadi bahan pertimbangan rapat kenaikan kelas/kelulusan.</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Jika terlambat</h3>
+          <p>Datang setelah kegiatan dimulai dinyatakan terlambat. Peserta didik wajib melapor ke guru piket, menyampaikan alasan secara jujur, mengikuti prosedur pembinaan, lalu segera bergabung setelah mendapat izin. Keterlambatan <strong>tidak langsung mengurangi nilai akademik</strong>, tetapi dicatat sebagai bagian pembinaan kedisiplinan; jika berulang, ditindaklanjuti wali kelas &amp; guru BK bersama orang tua/wali.</p>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Pulang sebelum kegiatan berakhir</h3>
+          <p>Hanya diperbolehkan apabila: sakit, ada keperluan keluarga penting, dijemput/disetujui orang tua-wali, <strong>dan</strong> telah memperoleh izin dari sekolah.</p>
+        </div>
+      </section>
+
+      <!-- BAB 3 -->
+      <section class="chapter" id="bab-3">
+        <div class="chapter-head">
+          <div class="chapter-badge">3</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Ketidakhadiran</h2></div>
+        </div>
+        <p>Ketidakhadiran dibedakan menjadi empat: <strong>sakit, izin, tugas resmi sekolah,</strong> dan <strong>tanpa keterangan.</strong></p>
+
+        <div class="card">
+          <h3><span class="dot"></span>A. Karena sakit</h3>
+          <ol class="rules">
+            <li>Disampaikan orang tua/wali melalui media komunikasi resmi sekolah, paling lambat pukul 09.00 hari itu.</li>
+            <li>Sakit 1–2 hari → cukup keterangan orang tua/wali (cetak/digital).</li>
+            <li>Sakit lebih dari 2 hari berturut-turut → wajib surat keterangan dokter/faskes.</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>B. Karena izin</h3>
+          <ol class="rules">
+            <li>Disampaikan orang tua/wali melalui media resmi sekolah, paling lambat 1 hari sebelumnya (bila diketahui sebelumnya).</li>
+            <li>Untuk kepentingan keluarga, keagamaan, kesehatan, atau kondisi lain yang dapat dipertanggungjawabkan.</li>
+            <li>Izin liburan keluarga pada hari efektif perlu pengajuan tertulis kepada kepala sekolah.</li>
+            <li>Izin tidak menghapus kewajiban mempelajari materi &amp; menyelesaikan tugas tertinggal.</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>C. Tanpa keterangan</h3>
+          <ol class="rules">
+            <li>Hari pertama → wali kelas melakukan konfirmasi.</li>
+            <li>Hari kedua (berturut-turut/kumulatif) → pembinaan oleh wali kelas &amp; guru BK.</li>
+            <li>Tiga hari kumulatif dalam satu semester → orang tua/wali diundang bertemu sekolah.</li>
+            <li>Lebih dari tiga hari → catatan serius dalam penilaian kedisiplinan &amp; pertimbangan kenaikan kelas.</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Setelah kembali bersekolah</h3>
+          <p>Peserta didik tetap wajib mencari informasi materi tertinggal, meminta penjelasan guru, menyelesaikan tugas, dan mengikuti asesmen susulan bila perlu — dengan waktu koordinasi paling lama <strong>5 hari sekolah</strong>. Untuk kondisi khusus (sakit berkepanjangan, rawat inap, bencana, kedukaan), sekolah dapat memberi penyesuaian.</p>
+        </div>
+      </section>
+
+      <!-- BAB 4 -->
+      <section class="chapter" id="bab-4">
+        <div class="chapter-head">
+          <div class="chapter-badge">4</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Tugas &amp; Beban Belajar</h2></div>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Waktu pengerjaan</h3>
+          <ol class="rules">
+            <li>Tugas rutin ringan → minimal 2 hari sekolah pengerjaan.</li>
+            <li>Tugas proyek/tugas besar → minimal 7 hari kalender (kecuali dikerjakan saat jam pelajaran).</li>
+            <li>Batas pengumpulan tugas besar maksimal 2 mata pelajaran dalam satu hari — guru berkoordinasi lewat kalender akademik kelas agar tidak menumpuk.</li>
+          </ol>
+        </div>
+
+        <div class="callout brick"><div class="num">!</div><div>Tugas <strong>tidak boleh</strong> diberikan sebagai hukuman atas pelanggaran kedisiplinan, dan nilai akademik tidak boleh dikurangi semata karena pelanggaran perilaku yang tak terkait kompetensi yang dinilai.</div></div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Tanggung jawab peserta didik</h3>
+          <p>Mengumpulkan tugas tepat waktu; jika ada kendala, hubungi guru <strong>sebelum</strong> batas waktu berakhir. Keterlambatan tanpa alasan tetap wajib diselesaikan dan dicatat sebagai pembinaan tanggung jawab — nilai tetap diberikan berdasarkan kualitas capaian kompetensi. Peserta didik yang sakit/izin/tugas resmi berhak atas penyesuaian batas waktu. Tugas yang diberikan lewat platform digital setelah pukul <strong>17.00</strong> dianggap mulai berlaku hari sekolah berikutnya.</p>
+        </div>
+      </section>
+
+      <!-- BAB 5 -->
+      <section class="chapter" id="bab-5">
+        <div class="chapter-head">
+          <div class="chapter-badge">5</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Asesmen / Penilaian</h2></div>
+        </div>
+        <p>Asesmen dilaksanakan secara objektif, adil, terbuka, dan mendidik — dapat berupa tes tertulis/lisan, kuis, praktik, demonstrasi, presentasi, proyek, produk, portofolio, jurnal/refleksi, observasi, atau bentuk lain sesuai tujuan pembelajaran.</p>
+
+        <div class="card">
+          <h3><span class="dot"></span>Tiga jenis asesmen</h3>
+          <p><strong>Asesmen awal</strong> — dilakukan sebelum/di awal pembelajaran untuk memetakan kesiapan, bukan untuk memberi label "pintar/tidak pintar"; nilainya tidak harus masuk rapor.<br>
+          <strong>Asesmen formatif</strong> — dilakukan selama proses belajar (kuis singkat, diskusi, latihan); tidak semua wajib menjadi nilai rapor.<br>
+          <strong>Asesmen sumatif</strong> — dilakukan setelah Tujuan Pembelajaran selesai dipelajari, menjadi bahan nilai rapor, kenaikan kelas, dan kelulusan.</p>
+        </div>
+
+        <div class="callout"><div class="num">90%</div><div>Sebelum mengikuti asesmen sumatif, peserta didik wajib menyelesaikan <strong>minimal 90% tugas wajib</strong> yang sudah jatuh tempo pada mata pelajaran tersebut. Belum memenuhi 90%? Ikuti program penuntasan tugas terlebih dahulu, baru mengikuti asesmen susulan.</div></div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Pengaturan beban asesmen (agar tidak menumpuk)</h3>
+          <table class="assess">
+            <thead><tr><th>Jenis kegiatan</th><th>Batas maksimal</th></tr></thead>
+            <tbody>
+              <tr><td>Kuis singkat / kuis harian</td><td>3 mapel dalam satu hari</td></tr>
+              <tr><td>Asesmen sumatif lingkup materi</td><td>1 mapel dalam satu hari</td></tr>
+              <tr><td>Kuis pada hari ada asesmen sumatif</td><td>Maksimal 1 kuis tambahan</td></tr>
+              <tr><td>Tenggat tugas proyek / tugas besar</td><td>2 mapel dalam satu hari</td></tr>
+              <tr><td>Asesmen praktik persiapan khusus</td><td>1 kegiatan utama per hari</td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">Ketentuan ini tidak berlaku pada jadwal khusus STS, SAS, asesmen akhir jenjang, atau kegiatan terpusat lain. Jadwal asesmen sumatif diumumkan minimal 5 hari sekolah sebelumnya.</p>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Pelaksanaan &amp; hasil asesmen</h3>
+          <ol class="rules">
+            <li>Terlambat mengikuti asesmen tetap diperbolehkan ikut, selama tidak mengganggu ketertiban dan soal belum bocor.</li>
+            <li>Tidak ikut karena sakit/izin/tugas resmi → berhak asesmen susulan tanpa pengurangan nilai. Tanpa keterangan → mengikuti pembinaan dulu sebelum jadwal susulan.</li>
+            <li>Hasil kuis/formatif diinformasikan maksimal 7 hari sekolah; hasil sumatif/proyek/praktik maksimal 10 hari sekolah setelah pelaksanaan.</li>
+            <li>Peserta didik dapat mengajukan klarifikasi nilai maksimal 3 hari sekolah setelah hasil disampaikan, secara santun dengan bukti pendukung.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- BAB 6 -->
+      <section class="chapter" id="bab-6">
+        <div class="chapter-head">
+          <div class="chapter-badge">6</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Kejujuran Akademik</h2></div>
+        </div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Termasuk pelanggaran kejujuran akademik</h3>
+          <p>Menyontek, memberi jawaban ke teman, membawa catatan terlarang, menyalin tugas orang lain, meminta orang lain mengerjakan tugas, memalsukan data/hasil praktik, plagiarisme, memakai aplikasi/perangkat terlarang, membagikan soal tanpa izin, dan <strong>menggunakan kecerdasan artifisial (AI) tanpa mengikuti ketentuan guru.</strong></p>
+        </div>
+
+        <div class="callout"><div class="num">AI</div><div>Penggunaan AI <strong>diperbolehkan</strong> jika: mendapat izin/arahan guru, digunakan untuk memahami/mencari ide/memperbaiki pekerjaan, hasil akhir sudah diperiksa &amp; dipahami sendiri, sumber/bentuk bantuan AI dituliskan, dan AI tidak menggantikan seluruh proses berpikir. Menyalin langsung hasil AI dan mengakuinya sebagai karya sendiri = pelanggaran kejujuran akademik.</div></div>
+
+        <div class="card">
+          <h3><span class="dot"></span>Jika terjadi pelanggaran</h3>
+          <p>Peserta didik wajib mengikuti klarifikasi, mengulang asesmen/tugas dalam bentuk berbeda, mengikuti pembinaan, dan membuat refleksi/pernyataan tanggung jawab. Penanganan dilakukan secara mendidik, mempertimbangkan tingkat, frekuensi, dan dampak pelanggaran; pelanggaran berulang dibahas bersama orang tua/wali.</p>
+        </div>
+      </section>
+
+      <!-- BAB 7 -->
+      <section class="chapter" id="bab-7">
+        <div class="chapter-head">
+          <div class="chapter-badge">7</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Ketuntasan Belajar</h2></div>
+        </div>
+        <p>Peserta didik dinyatakan tuntas apabila mencapai Tujuan Pembelajaran sesuai <strong>KKTP (Kriteria Ketercapaian Tujuan Pembelajaran)</strong> — dapat berupa deskripsi kriteria, rubrik, interval nilai, predikat, atau nilai angka. Nilai angka <strong>bukan satu-satunya</strong> bukti ketuntasan; bisa juga lewat tes, praktik, produk, proyek, presentasi, atau portofolio.</p>
+        <div class="card">
+          <h3><span class="dot"></span>Belum mencapai KKTP?</h3>
+          <p>Peserta didik berhak atas tindak lanjut: umpan balik, pembelajaran remedial, latihan tambahan, bimbingan individu/kelompok, dan asesmen ulang bila diperlukan. Ketidaktuntasan pada satu asesmen <strong>tidak otomatis</strong> membuat peserta didik dinyatakan tidak tuntas pada satu mata pelajaran — guru mempertimbangkan berbagai bukti belajar.</p>
+        </div>
+      </section>
+
+      <!-- BAB 8 -->
+      <section class="chapter" id="bab-8">
+        <div class="chapter-head">
+          <div class="chapter-badge">8</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Remedial</h2></div>
+        </div>
+        <div class="callout"><div class="num">✓</div><div>Remedial <strong>bukan hukuman</strong> — melainkan kesempatan memperbaiki pemahaman dan pencapaian belajar. Wajib diikuti peserta didik yang belum mencapai KKTP.</div></div>
+        <div class="card">
+          <h3><span class="dot"></span>Cara pelaksanaan</h3>
+          <p>Terdiri atas <strong>remedial pembelajaran</strong> (penjelasan ulang, kelompok kecil, bimbingan individu, tutor sebaya, dsb.) yang harus dilalui lebih dulu sebelum <strong>remedial penilaian.</strong> Dapat dilaksanakan pada waktu yang disepakati, jam pendampingan akademik, atau setelah jam pembelajaran — tanpa mengganggu asesmen utama mapel lain.</p>
+        </div>
+        <div class="card">
+          <h3><span class="dot"></span>Yang perlu diketahui</h3>
+          <ol class="rules">
+            <li>Sekolah memberi minimal 2 kesempatan penilaian remedial per semester.</li>
+            <li>Diselesaikan paling lambat sebelum batas akhir pengolahan nilai rapor.</li>
+            <li>Nilai remedial yang dicatat maksimal sama dengan nilai KKTP.</li>
+            <li>Tidak mengikuti remedial tanpa alasan jelas → dicatat belum menyelesaikan tindak lanjut, dan orang tua/wali diinformasikan bila berulang.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- BAB 9 -->
+      <section class="chapter" id="bab-9">
+        <div class="chapter-head">
+          <div class="chapter-badge">9</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Pengayaan</h2></div>
+        </div>
+        <p>Diberikan kepada peserta didik yang telah mencapai atau melampaui KKTP, untuk memperluas, memperdalam, atau menerapkan pengetahuan &amp; keterampilan — misalnya soal tantangan lebih tinggi, proyek lanjutan, penelitian sederhana, menjadi tutor sebaya, atau mengikuti lomba.</p>
+        <div class="callout brick"><div class="num">!</div><div>Pengayaan <strong>tidak boleh</strong> menjadi hukuman bagi yang belajar lebih cepat, dan tidak boleh merugikan peserta didik apabila hasilnya lebih rendah dari nilai sebelumnya — tetap memperhatikan kesehatan dan waktu istirahat.</div></div>
+      </section>
+
+      <!-- BAB 10 -->
+      <section class="chapter" id="bab-10">
+        <div class="chapter-head">
+          <div class="chapter-badge">10</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Pelaporan Hasil Belajar</h2></div>
+        </div>
+        <div class="card">
+          <h3><span class="dot"></span>Bentuk pelaporan</h3>
+          <p>Umpan balik langsung, hasil tugas &amp; asesmen, laporan perkembangan belajar, rapor tengah semester (jika ada), rapor semester, dan pertemuan dengan orang tua/wali. Nilai rapor disusun dari bukti pencapaian yang relevan — <strong>bukan hanya dari satu asesmen.</strong></p>
+        </div>
+        <p>Peserta didik &amp; orang tua/wali berhak mendapat penjelasan capaian belajar, kekuatan, bagian yang perlu ditingkatkan, dan rencana tindak lanjut. Kesalahan penulisan/pengolahan nilai dapat diperbaiki melalui prosedur resmi ke guru mata pelajaran dan wali kelas, lalu diteruskan ke bidang kurikulum bila belum terselesaikan.</p>
+      </section>
+
+      <!-- BAB 11 -->
+      <section class="chapter" id="bab-11">
+        <div class="chapter-head">
+          <div class="chapter-badge">11</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Kenaikan Kelas</h2></div>
+        </div>
+        <p>Ditetapkan melalui rapat dewan guru pada akhir tahun ajaran — secara objektif, menyeluruh, dan adil, <strong>bukan</strong> hanya berdasarkan satu nilai ujian atau satu mata pelajaran.</p>
+        <div class="card">
+          <h3><span class="dot"></span>Kriteria naik kelas</h3>
+          <ol class="rules">
+            <li>Mengikuti &amp; menyelesaikan program pembelajaran selama dua semester.</li>
+            <li>Kehadiran minimal 80% pada setiap semester.</li>
+            <li>Menyelesaikan minimal 90% tugas wajib.</li>
+            <li>Mengikuti asesmen yang dipersyaratkan.</li>
+            <li>Mengikuti program remedial pada Tujuan Pembelajaran yang belum tuntas.</li>
+            <li>Nilai sikap belajar/perilaku minimal <strong>Baik.</strong></li>
+            <li>Tidak memiliki catatan pelanggaran berat yang belum diselesaikan.</li>
+          </ol>
+        </div>
+        <div class="callout"><div class="num">i</div><div>Pada prinsipnya, peserta didik tidak memiliki lebih dari <strong>dua mata pelajaran</strong> dengan Tujuan Pembelajaran esensial yang masih belum tuntas setelah remedial. Kehadiran di bawah 80% <strong>tidak otomatis</strong> membuat tidak naik kelas jika ada kondisi khusus (sakit berkepanjangan, rawat inap, kedukaan, bencana, kondisi psikologis) yang dapat dibuktikan.</div></div>
+        <p>Peserta didik yang belum memenuhi kriteria dapat memperoleh pendampingan tambahan, program penuntasan, dan konferensi kasus sebelum keputusan diambil dalam rapat dewan guru — lengkap dengan pemberitahuan sebelumnya dan komunikasi bersama orang tua/wali.</p>
+      </section>
+
+      <!-- BAB 12 -->
+      <section class="chapter" id="bab-12">
+        <div class="chapter-head">
+          <div class="chapter-badge">12</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Kelulusan</h2></div>
+        </div>
+        <p>Ditetapkan melalui rapat dewan guru untuk peserta didik kelas IX — <strong>tidak</strong> ditentukan hanya berdasarkan satu ujian.</p>
+        <div class="card">
+          <h3><span class="dot"></span>Kriteria kelulusan</h3>
+          <ol class="rules">
+            <li>Menyelesaikan seluruh program pembelajaran kelas VII, VIII, dan IX.</li>
+            <li>Mengikuti kegiatan pembelajaran &amp; asesmen yang ditetapkan sekolah.</li>
+            <li>Kehadiran minimal 80% setiap semester (kecuali kondisi khusus).</li>
+            <li>Nilai sikap/perilaku minimal Baik.</li>
+            <li>Menyelesaikan program remedial &amp; tindak lanjut yang dipersyaratkan.</li>
+            <li>Mengikuti asesmen akhir satuan pendidikan.</li>
+            <li>Mengikuti program khas sekolah — misalnya Tahfizh, pembiasaan keagamaan, atau proyek akhir.</li>
+          </ol>
+        </div>
+        <p style="font-size:14.5px;color:var(--muted);">Prestasi akademik/nonakademik menjadi bahan pertimbangan tambahan, tetapi tidak menggantikan kewajiban menyelesaikan program pembelajaran. Hasil Asesmen Nasional bukan satu-satunya penentu kelulusan.</p>
+      </section>
+
+      <!-- BAB 13 -->
+      <section class="chapter" id="bab-13">
+        <div class="chapter-head">
+          <div class="chapter-badge">13</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Layanan bagi Kondisi Khusus</h2></div>
+        </div>
+        <p>Peserta didik dengan kebutuhan khusus, hambatan kesehatan, kondisi psikologis, atau keadaan tertentu berhak atas penyesuaian pembelajaran &amp; asesmen — misalnya tambahan waktu, perubahan tempat asesmen, alat bantu, bentuk soal/tugas yang disesuaikan, jeda istirahat, pendampingan, atau perubahan jadwal.</p>
+        <div class="callout"><div class="num">🔒</div><div>Penyesuaian diberikan berdasarkan informasi dari orang tua/wali, guru BK, atau tenaga ahli — bukan untuk memberi keuntungan tidak adil, melainkan agar peserta didik dapat menunjukkan kemampuan secara wajar. Informasi pribadi dijaga kerahasiaannya oleh sekolah.</div></div>
+      </section>
+
+      <!-- BAB 14 -->
+      <section class="chapter" id="bab-14">
+        <div class="chapter-head">
+          <div class="chapter-badge">14</div>
+          <div><span class="subhead">Ketentuan Akademik</span><h2>Penyelesaian Permasalahan Akademik</h2></div>
+        </div>
+        <p>Diselesaikan secara bertahap: <strong>guru mata pelajaran → wali kelas → guru BK → bidang kurikulum → kepala sekolah</strong> (bila diperlukan). Keberatan disampaikan dengan bahasa santun dan informasi yang jelas.</p>
+        <div class="callout brick"><div class="num">!</div><div>Peserta didik <strong>tidak diperkenankan</strong> menyebarkan tuduhan, soal, nilai, atau informasi pribadi melalui media sosial sebelum menempuh prosedur resmi. Setiap permasalahan diselesaikan berdasarkan data, bukti, dan prinsip keadilan.</div></div>
+      </section>
+
+    </div>
+
+    <!-- RINGKASAN -->
+    <div class="summary-section" id="ringkasan">
+      <div class="summary-inner">
+        <div class="chapter-head">
+          <div class="chapter-badge" style="background:var(--gold);color:var(--emerald-deep);border-color:#fff;">★</div>
+          <div><span class="subhead">Wajib Diingat</span><h2>Ringkasan Aturan Penting bagi Peserta Didik</h2></div>
+        </div>
+        <div class="checklist">
+          <div class="check-item"><span class="cn">01</span><span>Hadir minimal 80% dalam setiap semester.</span></div>
+          <div class="check-item"><span class="cn">02</span><span>Datang paling lambat 10 menit sebelum kegiatan dimulai.</span></div>
+          <div class="check-item"><span class="cn">03</span><span>Sakit atau izin harus diinformasikan oleh orang tua/wali.</span></div>
+          <div class="check-item"><span class="cn">04</span><span>Sakit lebih dari dua hari harus disertai surat dokter.</span></div>
+          <div class="check-item"><span class="cn">05</span><span>Maksimal tiga kuis singkat dalam satu hari.</span></div>
+          <div class="check-item"><span class="cn">06</span><span>Maksimal satu asesmen sumatif lingkup materi dalam satu hari.</span></div>
+          <div class="check-item"><span class="cn">07</span><span>Minimal 90% tugas wajib harus selesai sebelum asesmen sumatif.</span></div>
+          <div class="check-item"><span class="cn">08</span><span>Peserta didik yang belum tuntas wajib mengikuti remedial.</span></div>
+          <div class="check-item"><span class="cn">09</span><span>Menyontek, plagiarisme, dan menyalin hasil AI adalah pelanggaran kejujuran akademik.</span></div>
+          <div class="check-item"><span class="cn">10</span><span>Nilai akademik berdasarkan pencapaian belajar; pelanggaran perilaku ditangani lewat pembinaan sikap.</span></div>
+          <div class="check-item"><span class="cn">11</span><span>Kenaikan kelas & kelulusan ditetapkan lewat rapat dewan guru secara menyeluruh.</span></div>
+          <div class="check-item"><span class="cn">12</span><span>Mengalami kesulitan? Boleh minta bantuan guru, wali kelas, guru BK, atau bidang kurikulum.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Ketentuan Akademik · SMP Al Azhar Syifa Budi Parahyangan · Tahun Ajaran 2026/2027
+    </footer>
+  </main>
+</div>
+
+<script>
+  // Highlight active nav item on scroll
+  const sections = document.querySelectorAll('section.chapter, .hero, .summary-section');
+  const links = document.querySelectorAll('#tocNav a');
+  const map = {};
+  links.forEach(l => map[l.getAttribute('href').slice(1)] = l);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      if (!map[id]) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        map[id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(s => { if (s.id) observer.observe(s); });
+
+  // Close mobile nav after clicking a link
+  links.forEach(l => l.addEventListener('click', () => {
+    const nav = document.getElementById('tocNav');
+    if (window.innerWidth <= 900) nav.classList.remove('open');
+  }));
+</script>
+</body>
+</html>
